@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моята страница</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #a9d5e1; /* Base background color */
+            background-image: background-color: #fcfcfc;
+background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a639b7' fill-opacity='0.21' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23214976' fill-opacity='0.84' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");     }
+        h1 {
+            color: #333;
+	    font-family: 'Times New Roman', serif;
+	}
+		p {
+        font-family: 'Times New Roman', serif; /* Задава шрифта на параграфа */
+	}
+	        #links {
+            display: flex;
+            flex-direction: column; /* Подравнява линковете вертикално */
+            align-items: center; /* Центрира линковете по хоризонтала */
+        }
+        a {
+            display: flex; /* Използваме flexbox за подравняване */
+            align-items: center; /* Центрира иконата и текста по вертикала */
+            justify-content: flex-start; /* Align items to the start */
+            margin: 10px 0;
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            padding: 5px; /* Добавя padding за по-добър вид */
+            width: 100%; /* Задава ширина на линка */
+            max-width: 300px; /* Ограничаваме ширината на линка */
+            border-radius: 5px; /* Добавяме заоблени ъгли за линка */
+            background-color: #f9f9f9; /* Лек фон за линка */
+        }
+        a:hover {
+            color: #ff5722;
+            background-color: #e0e0e0; /* Сив фон при hover */
+        }
+        a i {
+            font-size: 24px; /* Размер на иконите */
+            margin-right: 10px; /* Стандартно разстояние между иконата и текста */
+        }
+        /* Специфични цветове за Instagram, Facebook и имейл */
+        .instagram {
+            color: #E1306C; /* Instagram цвят */
+        }
+        .facebook {
+            color: #3b5998; /* Facebook цвят */
+        }
+        .phone {
+            color: #4CAF50; /* Зелен цвят за телефон */
+        }
+        .email {
+            color: #FF5722; /* Оранжев цвят за имейл */
+        }
+        img {
+            width: 140px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="mama.JPG" alt="Профилна снимка">
+        <h1>Добре дошли на моята страница!</h1>
+        <p>Тук можете да намерите всички мои контакти.</p>
+        
+        <div id="links"></div>
+    </div>
+
+    <script>
+        const contacts = [
+            { name: "Instagram", url: "https://www.instagram.com/marazovv/", icon: "fab fa-instagram", class: "instagram" },
+            { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100003782740204", icon: "fab fa-facebook", class: "facebook" },
+            { name: "Имейл", url: "mailto:denislav22@gmail.com", icon: "fas fa-envelope", class: "email" }, // Иконата за имейл
+            { name: "Телефон", url: "tel:+359878220107", icon: "fas fa-phone", class: "phone" } // Добавен клас за телефон
+        ];
+
+        const linksDiv = document.getElementById('links');
+        contacts.forEach(contact => {
+            const linkElement = document.createElement('a');
+            linkElement.href = contact.url;
+
+            linkElement.innerHTML = `<i class="${contact.icon} ${contact.class}"></i> ${contact.name}`; // Добавя клас за цвета
+            linksDiv.appendChild(linkElement);
+        });
+    </script>
+</body>
+</html>
